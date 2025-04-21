@@ -5,9 +5,7 @@
 
 # so when refactoring, we tried to eliminate the variable reassignment by using a function,
 # remove the dependency of list being 10 items by using the length of the list as the max
-# remove the need to save output to variables by returning the capitalized string using
-# method chaining. 
-
+# remove the need to save output to variables by returning the capitalized string using method chaining. 
 
 import random
 
