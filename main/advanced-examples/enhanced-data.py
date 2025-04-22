@@ -1,7 +1,6 @@
 import random
 import pprint
 
-
 ## create a list of dicts that we can filter through
 beer_list = [
   {
@@ -53,7 +52,6 @@ medium_quality_beer = list(filter(lambda beer: getBeerByQuality(beer, 'medium'),
 pprint.pprint(medium_quality_beer)
 print('\n*\n*\n*\n')
 
-
 # Lets play with some template strings / format strings and have a random beer get served up using our dicts' properties 
 def bartenderServesRandomBeer(list):
   random_beer = list[random.randint(0, len(list) - 1)]
@@ -66,7 +64,6 @@ def bartenderServesRandomBeer(list):
 bartenderServesRandomBeer(beer_list)
 print('\n*\n*\n*\n')
 
-
 # Lets now use some user input to choose a beer, also using our list to give our user options
 def askForBeerList(list):
   print('Ah, our whole list? Well, we have:')
@@ -77,6 +74,5 @@ def askForBeerList(list):
 
   choice = input('So what will it be? (type the number corisponding to the name and hit enter)')
   print(f'Ah, you chose {list[int(choice)]['name']}')
-
 
 askForBeerList(beer_list)
