@@ -56,7 +56,14 @@ From there, run the CLI command: `python3 hello-world.py`. Note, your python ver
 - Git workflow
 
 #### Basic Git commands
-There are a few basic git commands we will be using
+There are a few basic git commands we will be using:
+- `git status` will show you your untracked and tracked changes
+- `git add .` will add all of your changes to the current commit
+- `git commit -m "<message>"` will create a commit and add a message 
+- `git checkout <branchname>` will switch to a new branch on the repository
+- `git checkout -b <branchname>` will create a new branch with the branchname you chose
+- `git push` to push changes up to your branch
+- `git pull` to pull down the latest changes from a brnahc 
 
 #### Installing pyenv and using pyenv
 - Installation
