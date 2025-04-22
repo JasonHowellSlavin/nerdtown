@@ -55,6 +55,11 @@ From there, run the CLI command: `python3 hello-world.py`. Note, your python ver
 - Basic git commands
 - Git workflow
 
+#### Online Git Tutorials 
+- [Github Getting Started](https://docs.github.com/en/get-started/start-your-journey/hello-world)
+- [Github, about Git](https://docs.github.com/en/get-started/using-git/about-git)
+- [Git command list](https://git-scm.com/docs)
+
 #### Basic Git commands
 There are a few basic git commands we will be using:
 - `git status` will show you your untracked and tracked changes
@@ -63,7 +68,44 @@ There are a few basic git commands we will be using:
 - `git checkout <branchname>` will switch to a new branch on the repository
 - `git checkout -b <branchname>` will create a new branch with the branchname you chose
 - `git push` to push changes up to your branch
-- `git pull` to pull down the latest changes from a brnahc 
+- `git pull` to pull down the latest changes from a branch
+
+#### Git Workflow
+I will handle the merging of code into main for now, but it is something we ought to get you used to eventually. 
+In the meantime our process will look like: 
+- Pull down the main branch to get the latest code
+- Create a new branch
+- Make some code changes 
+- Add, Commit, Push
+
+We can get into more advanced workflow use cases as they occur, but this ought to be enough for us now. 
+
+Here is an example of those commands as we would use them in terminal: 
+```
+# checkout the main branch
+git checkout main
+
+# get the latest code 
+git pull
+
+# create a new branch
+git checkout -b <new branch name>
+
+# Do some coding here
+....
+
+# Add changes
+git add .
+
+# Commit 
+git commit -m "<my message>"
+
+# Push upsteam
+git push -u origin <my branch name>
+
+# Or if there is already an upstream branch
+git push
+```
 
 #### Installing pyenv and using pyenv
 - Installation
