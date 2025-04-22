@@ -55,6 +55,9 @@ From there, run the CLI command: `python3 hello-world.py`. Note, your python ver
 - Basic git commands
 - Git workflow
 
+#### Basic Git commands
+There are a few basic git commands we will be using
+
 #### Installing pyenv and using pyenv
 - Installation
 - Documentation 
