@@ -27,7 +27,7 @@ eval "$(pyenv init -)"
 
 
 
-Then, reload your shell:([Jilles Soeters][1])
+Then, reload your shell:
 
 ```bash
 source ~/.zshrc
@@ -35,7 +35,7 @@ source ~/.zshrc
 
 
 
-Verify installation:([Jilles Soeters][1])
+Verify installation:
 
 ```bash
 pyenv --version
@@ -86,7 +86,7 @@ poetry --version
 ## Step 4: Initialize Your Django Project
 
 
-Set the local Python version:([markeyser][2])
+Set the local Python version:
 
 ```bash
 pyenv local 3.12
@@ -94,7 +94,7 @@ pyenv local 3.12
 
 
 
-Initialize a new Poetry project:([markeyser][2])
+Initialize a new Poetry project:
 
 ```bash
 poetry init --no-interaction
@@ -102,7 +102,7 @@ poetry init --no-interaction
 
 
 
-Install Django 5.1:([rasulkireev.com][3])
+Install Django 5.1:
 
 ```bash
 poetry add Django@5.1
@@ -110,7 +110,7 @@ poetry add Django@5.1
 
 
 
-Poetry will create a virtual environment and install Django along with its dependencies.([rasulkireev.com][3])
+Poetry will create a virtual environment and install Django along with its dependencies.
 
 ## Step 5: Create a New Django Project
 
@@ -128,7 +128,7 @@ poetry run python manage.py migrate
 
 
 
-Run the development server:([Jilles Soeters][1])
+Run the development server:
 
 ```bash
 poetry run python manage.py runserver
@@ -140,7 +140,7 @@ Your Django 5.1 project is now running at [http://127.0.0.1:8000/](http://127.0.
 
 ---
 
-For a more detailed explanation, refer to the original article by Jilles Soeters: ([Jilles Soeters][1]).([Jilles Soeters][1])
+For a more detailed explanation, refer to the original article by Jilles Soeters: 
 
 
 [1]: https://jilles.me/setting-up-django-5-1-using-python-3-12-with-pyenv-and-poetry/?utm_source=chatgpt.com "Setting up Django 5.1 using Python 3.12 with pyenv and Poetry"
