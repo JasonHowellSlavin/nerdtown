@@ -23,7 +23,6 @@ def precentage_array(entries=4, minimum=1):
   exceeds_percent_toal = entries * minimum > available_percentage - (ent * min) < min
 
   if (exceeds_percent_toal):
-    percentage_maximum = int(available_percentage/entries)
     min = 1
     message = 'Enteries and minimum exceeded percentage allocation, returning new max and min'
 
