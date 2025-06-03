@@ -2,12 +2,15 @@ import random
 
 # Takes a list that likely has a large first int, divides and adds quotiant to list and returns list +
 def normalize_outlier(arr):
+  if not arr:
+    return []
+    
   remainder = arr.pop(0)
   quotient = int(remainder / len(arr))
   reduction_factor = 1.25
 
   # using a reduction factor to minimize the amount of addition to make a more normalized sum
-  mapped_list = list(map(lambda n: n + int(quotient / reduction_factor), arr))
+  mapped_list = [n + int(quotient / reduction_factor) for n in arr]
   difference = 100 - sum(mapped_list)
   mapped_list.insert(0, difference)
   return mapped_list
@@ -15,6 +18,9 @@ def normalize_outlier(arr):
 # returns a list with an array of percentages and a message
 # will seek to normalize percentages, but the change of an outlier is fairly high
 def precentage_array(entries=4, minimum=1):
+  if entries <= 0:
+    return {"percentages": [], "message": "Invalid number of entries"}
+    
   percentages = []
   available_percentage = 100
   min = minimum
