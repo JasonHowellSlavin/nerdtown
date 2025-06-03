@@ -61,7 +61,6 @@ def precentage_array(entries=4, minimum=1):
 
 # TESTING CODE BELOW
 
-
 # per1 = precentage_array(10, 44)
 # print(per1, sum(per1['percentages']))
 
@@ -71,3 +70,18 @@ def precentage_array(entries=4, minimum=1):
 
 #   if (sum(per2) != 100):
 #     print(f'Not 100, {sum(per2)}, {per2}')
+
+# Use Case: 
+""" 
+Create a demographic for the tavern
+"""
+character_species = ['Dwarf', 'Elf', 'Halfling', 'Human', 'Gnome']
+
+# For good distributions, you want a larger minimum or a minumim ~halfway of what would be needed for it * entries == 100
+distrubtion = precentage_array(len(character_species), 10)
+distrubtion_kv = {}
+
+for i in range(0, len(distrubtion['percentages'])):
+  distrubtion_kv[character_species[i]] = distrubtion['percentages'][i]
+
+print(distrubtion_kv)
