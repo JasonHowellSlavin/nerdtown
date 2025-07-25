@@ -4,6 +4,8 @@ import random
 #Lists
 adjective = ["small", "big", "cute", "sneaky", "unusual", "helpful", "mean", "red", "blue", "green"]   
 animals = ["pig", "cow", "chicken", "zebra", "crayfish", "jellyfish", "worm", "boar", "dragon", "bull"]
+noun = ["apple", "beak", "crown", "cap", "den", "place", "pride", "rest"]
+possessive_noun = ["king's", "queen's", "rougue's", "stag's", "rat's", "jay's","dunce's"]
 quality = ["upscale", "decent", "low-end"]
 beers = ["lager", "brown ale", "gruit"]
 name_prefix = ["ash", "bal", "crag", "dol", "esk", "fred", "ger", "hope", "is", "jay"]
@@ -14,6 +16,7 @@ place = ["in the back corner", "at a center table", "at the bar", "near the fron
 
 # Initialization number: this number is what sets up the program
 num_patrons = random.randint(0, 60)
+bar_seed = random.randint(0, 1) #this is supposed to set up different naming conventions
 
 #Code
 def randomWordFromList(list):
@@ -61,13 +64,21 @@ def crowd_size(crowd):
         return {"popularity": "sparse", "description": "a few dudes"}
     else:
         return {"popularity": "empty", "description":  "empty of dudes"}
+    
+
+def bar_name_type():
+    if bar_seed == 1:
+        return randomWordFromList(adjective).capitalize() + " " + randomWordFromList(animals).capitalize()
+    else:
+        return randomWordFromList(possessive_noun).capitalize() + " " + randomWordFromList(noun).capitalize()
 
 bar_population = crowd_size(num_patrons)
 label = label_price()
 bartender_name = randomWordFromList(name_prefix).capitalize() + randomWordFromList(name_suffix)
-  
+bar_name = bar_name_type()
+
 # Testing
-print("Welccome To: The", randomWordFromList(adjective).capitalize() + " " + randomWordFromList(animals).capitalize())
+print("Welccome To: The", (bar_name))
 print("Quality:", randomWordFromList(quality).capitalize())
 print("Available Beer:", randomWordFromList(beers).capitalize())
 print("Price:", label["price"], "Copper", "-", label["quality"])
