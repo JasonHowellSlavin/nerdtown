@@ -13,6 +13,10 @@ name_suffix = ["voss", "wick", "ton", "shaw", "port", "moth", "hurst", "gate", "
 e_name_prefix = ["thoron", "kano", "bale", "kemen", "varda", "mereth", "rhos", "glin", "bril", "menel", "glam", "cham"]
 e_name_suffix = ["on", "ath", "rim", "or", "dil", "dur", "nil", "nur", "iel", "lin", "aelin"]
 place = ["in the back corner", "at a center table", "at the bar", "near the front door", "next to the hearth", "near the back exit", "in a booth"]
+races = ["human", "elf", "dwarf"]
+d_name_prefix = ["am", "bal", "dim", "har", "hod", "gra", "tor"]
+d_name_suffix = ["dor", "thor", "dek", "teth", "goth", "bur"]
+genders = ["male", "female", "non-binary"]
 
 # Initialization number: this number is what sets up the program
 num_patrons = random.randint(0, 60)
@@ -74,12 +78,45 @@ def bar_name_type():
 
 bar_population = crowd_size(num_patrons)
 label = label_price()
-bartender_name = randomWordFromList(name_prefix).capitalize() + randomWordFromList(name_suffix)
 bar_name = bar_name_type()
 
+
+
+def generate_bartender():
+    race = random.choice(races)
+
+    if race == "human":
+        name = randomWordFromList(name_prefix).capitalize() + randomWordFromList(name_suffix)
+    elif race == "elf":
+        name = randomWordFromList(e_name_prefix).capitalize() + randomWordFromList(e_name_suffix)
+    else:
+        race == "dwarf"
+        name = randomWordFromList(d_name_prefix).capitalize() + randomWordFromList(d_name_suffix)
+
+    gender = random.choice(genders)
+
+    if gender == "male":
+        pro1 = "he"
+        pro2 = "him"
+    elif gender == "female":
+        pro1 = "she" 
+        pro2 = "her"
+    else:
+        pro1 = "they"
+        pro2 = "them"
+
+    return {
+        "name": name,
+        "race": race.capitalize(),
+        "gender": gender,
+        "pronoun": pro1
+    }
+bt = generate_bartender()
+
 # Testing
-print("Welccome To: The", (bar_name))
+print("Welccome To: The", bar_name)
 print("Quality:", randomWordFromList(quality).capitalize())
 print("Available Beer:", randomWordFromList(beers).capitalize())
 print("Price:", label["price"], "Copper", "-", label["quality"])
 print(f"Popularity: {num_patrons} {bar_population['popularity']}, {bar_population['description']}")
+print(f"{bt['name']} the {bt['race']} greets you with a friendly wave. {bt['pronoun'].capitalize()} invites you to take a seat.")
